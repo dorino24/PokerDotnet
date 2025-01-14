@@ -1,0 +1,52 @@
+﻿<div class="text-center d-none" id="mainGame">
+    <h1 class="my-3" style="font-size: 50px;">POKER</h1>
+    <div class="border border-2 border-dark rounded-pill text-center "
+        style="background-image: url('@Url.Content("~/assets/background.jpeg")'">
+        <div class="mt-5 mb-4 ">
+            @for (int i = 0; i < 2; i++)
+            {
+                <img class="mx-1" src="~/assets/backside_card.svg" alt="backside" width="50">
+            }
+        </div>
+        <div class="d-flex justify-content-between p-4">
+            <div class="d-flex flex-column " id="player2">
+                <span  class="h-25 text-white" id="betPlayer2">$100</span>
+                <span  class="h-25 text-white" id="namePlayer2">alisa</span>
+                <img class="mx-4" src="~/assets/backside_card.svg" alt="backside" width="50"  style="transform: rotate(90deg);">
+                <img class="mx-4" src="~/assets/backside_card.svg" alt="backside" width="50"  style="transform: rotate(90deg);">
+            </div>
+            <div class="align-content-center">
+                 <img class="" src="~/assets/backside_card.svg" alt="backside" width="50">
+                 <img class="" src="~/assets/backside_card.svg" alt="backside" width="50">
+                 <img class="" src="~/assets/backside_card.svg" alt="backside" width="50">
+            </div>
+             <div class="d-flex flex-column" id="player3">
+                <span  class="h-25 text-white" id="betPlayer3">$100</span>
+                <span  class="h-25 text-white" id="namePlayer3">jhon</span>
+                <img class="mx-4" src="~/assets/backside_card.svg" alt="backside" width="50"  style="transform: rotate(90deg);">
+                <img class="mx-4" src="~/assets/backside_card.svg" alt="backside" width="50"  style="transform: rotate(90deg);">
+            </div>
+        </div>
+        <div class=" mt-4 mb-3">
+            <span class="h-25 text-white">$100</span>
+            <div class="">
+                <img class="mx-1" src="~/assets/backside_card.svg" id="playercard1" width="50" />
+                <img class="mx-1" src="~/assets/backside_card.svg" id="playercard2" width="50" />
+            </div>
+        </div>
+        <div class="pb-3" id="action">
+            <input type="radio" class="btn-check" name="options" id="Bet" disabled>
+            <label class="btn btn-light" for="Bet">Bet</label>
+            <input type="radio" class="btn-check" name="options" id="Call" disabled>
+            <label class="btn btn-light" for="Call">Call</label>
+            <input type="radio" class="btn-check" name="options" id="Check" disabled>
+            <label class="btn btn-light" for="Check">Check</label>
+            <input type="radio" class="btn-check" name="options" id="Raise" disabled>
+            <label class="btn btn-light" for="Raise">Raise</label>
+            <input type="radio" class="btn-check" name="options" id="Fold" disabled>
+            <label class="btn btn-light" for="Fold">Fold</label>
+        </div>
+
+    </div>
+    <h5 id="waitInfo">waiting opponent</h5>
+</div>

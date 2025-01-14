@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div id="loby" class="justify-content-center " style="margin-top: 200px;">
+        <h1 class="mb-5" style="font-size: 70px;">POKER</h1>
+        <div class="d-flex justify-content-center">
+            <div class="w-25">
+                <h5 class="my-2">Insert your name</h5>
+                <input class="my-2 form-control form-control-sm border border-dark" type="text" id="playerName">
+                <button class="my-2 btn btn-primary btn-lg btn-warning" id="playGame">Play</button>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("Game.cshtml")
+</div>
+
+@section Scripts {
+    <script text="text/javascript">
+        $(document).ready(function () {
+            var playerIngame = [];
+
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/pokerHub")
+                .build();
+
+            var playerName = "";
+
+            $('#playGame').on('click', function () {
+                playerName = $('#playerName').val();
+                if (playerName == '') {
+                    alert('please fill your name');
+                    return;
+                }
+                $('#loby').addClass('d-none');
+                $('#mainGame').removeClass('d-none');
+
+                connection.start()
+                    .then(() => {
+                        if (playerName) {
+                            connection.invoke("JoinGame", playerName)
+                                .catch(err => console.error("Failed to join table:", err.toString()));
+                        }
+                    })
+                    .catch(err => console.error("Failed to connect to the Hub:", err.toString()));
+            });
+
+            connection.on("PlayerJoined", (playerName) => {
+                console.log(playerName);
+            });
+            connection.on("PlayerName", (AllPlayer) => {
+                playerIngame = [];
+
+                AllPlayer.forEach(name => {
+                    if (name != playerName) {
+                        playerIngame.push(name);
+                    };
+                });
+
+                updatePlayerListUI(playerIngame);
+            });
+
+            connection.on("PlayerHand", (player, cards) => {
+                if (player == playerName) {
+                    var assetCard1 = `/assets/${cards[0]}.svg`;
+                    var assetCard2 = `/assets/${cards[1]}.svg`;
+                    $('#playercard1').attr('src', assetCard1);
+                    $('#playercard2').attr('src', assetCard2);
+                }
+            });
+            connection.on("GameStarted", message => {
+                $('#waitInfo').text(message);
+            });
+
+            connection.on("PlayerTurn", player => {
+                console.log(`It's now ${player}'s turn.`);
+
+                if (player == playerName) {
+                    $('#action input').prop('disabled', false);
+                }
+            });
+            connection.on("PlayerAction", (player, action) => {
+                console.log(`${player} ${action}.`);
+            });
+
+            $('input[name="options"]').on('click', function () {
+                const selectedOption = $(this).attr('id');
+                console.log(`Selected option: ${selectedOption}`);
+                const value = 0;
+
+                connection.invoke("PlayHand", playerName, selectedOption, value)
+                    .catch(err => console.error("Failed to send action:", err.toString()));
+
+                $('#action input').prop('disabled', true);
+                $('#action input').prop('checked', false);
+            });
+        });
+        function updatePlayerListUI(playerIngame) {
+            console.log(playerIngame)
+            $("#namePlayer2").text(playerIngame[0]);
+            $("#namePlayer3").text("playerIngame[1]");
+        }
+    </script>
+}
