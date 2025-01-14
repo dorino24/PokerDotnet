@@ -50,13 +50,14 @@ namespace SignalRChatApp.Hubs
 
             await Clients.Group(gameId).SendAsync("GameStarted", "Game Started");
 
-            var currentPlayerIndex = 3 % players.Count();
+            var currentPlayerIndex = 1 % players.Count();
             var currentPlayer = players[currentPlayerIndex];
             await Clients.Group(gameId).SendAsync("PlayerTurn",
                             currentPlayer.Name,
                             currentPlayer.Chips,
                             currentPlayer.CurrentBet,
-                            players[(currentPlayerIndex + 1) % players.Count()].Name);
+                            players[(currentPlayerIndex + 1) % players.Count()].Name,
+                            game.Stage);
 
         }
 
@@ -65,7 +66,8 @@ namespace SignalRChatApp.Hubs
             int playerIndex = _pokerService.GetGame().Players.FindIndex(player => player.Name == playerName);
             var currentPlayer = _pokerService.GetGame().Players[playerIndex];
             bool allEqual = _pokerService.GetGame().Players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
-
+            _pokerService.GetGame().Players.All(x =>  x.CurrentBet == currentPlayer.CurrentBet);
+            
             if (playerIndex == _pokerService.GetTotalPlayer() - 1 && allEqual)
             {
                 _pokerService.GetGame().Stage = "Flop";
@@ -191,7 +193,8 @@ namespace SignalRChatApp.Hubs
                 playerName,
                 currentPlayer.Chips,
                 currentPlayer.CurrentBet,
-                players[nextIndex].Name);
+                players[nextIndex].Name,
+                game.Stage);
         }
 
         public override async Task OnDisconnectedAsync(Exception? exception)

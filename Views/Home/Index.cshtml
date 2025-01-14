@@ -21,6 +21,7 @@
         var playerChips = 0;
         var playerBet = 0;
         var currentBet = 0;
+        var currentStage ="";
         $(document).ready(function () {
 
             var playerNameChipsBet = [];
@@ -69,8 +70,10 @@
                 updatePlayerUI(playerNameChipsBet);
             });
 
-            connection.on("PlayerTurn", (currentPlayerName, newChips, newBet, nextPlayerName) => {
+            connection.on("PlayerTurn", (currentPlayerName, newChips, newBet, nextPlayerName,stage) => {
                 console.log(`It's now ${nextPlayerName}'s turn.`);
+                currentStage = stage;
+                console.log(currentStage);
                 currentBet = newBet;
                 for (let i = 0; i < playerNameChipsBet.length; i++) {
                     if (playerNameChipsBet[i].name == currentPlayerName) {
@@ -99,7 +102,7 @@
                         value = raiseAmount;
                     }
                 }
-                connection.invoke("SendPlayerAction", playerName, selectedOption, parseInt(value, 10))
+                connection.invoke("PlayerTurn", playerName, selectedOption, parseInt(value, 10))
                     .catch(err => console.error("Failed to send action:", err.toString()));
 
                 $('#action input').prop('disabled', true);

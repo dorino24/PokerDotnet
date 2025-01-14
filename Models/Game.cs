@@ -17,7 +17,7 @@ namespace PokerTest.Models
             Players = new List<Player>();
             deck = new Deck();
             Dealer = new Dealer();
-            Stage = "New";
+            Stage = "PreFlop";
         }
         public void AddPlayerToGame(Player player)
         {
