@@ -18,14 +18,15 @@
 
 @section Scripts {
     <script text="text/javascript">
+        var playerChips = 0;
+        var playerBet = 0;
+        var currentBet = 0;
         $(document).ready(function () {
-            var playerIngame = [];
 
+            var playerNameChipsBet = [];
             const connection = new signalR.HubConnectionBuilder()
                 .withUrl("/pokerHub")
                 .build();
-
-            var playerName = "";
 
             $('#playGame').on('click', function () {
                 playerName = $('#playerName').val();
@@ -44,62 +45,87 @@
                         }
                     })
                     .catch(err => console.error("Failed to connect to the Hub:", err.toString()));
+                $("#namePlayer1").text(playerName);
             });
 
-            connection.on("PlayerJoined", (playerName) => {
-                console.log(playerName);
-            });
-            connection.on("PlayerName", (AllPlayer) => {
-                playerIngame = [];
+            connection.on("PlayerHand", (name, chips, cards, bet, dealerCard) => {
 
-                AllPlayer.forEach(name => {
-                    if (name != playerName) {
-                        playerIngame.push(name);
-                    };
-                });
+                /* $('#dealerCard1').attr('src', `/assets/${dealerCard[0].value}_${dealerCard[0].suit}.svg`);
+                 $('#dealerCard2').attr('src', `/assets/${dealerCard[1].value}_${dealerCard[1].suit}.svg`);
+                 $('#dealerCard3').attr('src', `/assets/${dealerCard[2].value}_${dealerCard[2].suit}.svg`);*/
 
-                updatePlayerListUI(playerIngame);
-            });
-
-            connection.on("PlayerHand", (player, cards) => {
-                if (player == playerName) {
-                    var assetCard1 = `/assets/${cards[0]}.svg`;
-                    var assetCard2 = `/assets/${cards[1]}.svg`;
+                let playerAndChips = { name: name, chips: chips, bet: bet };
+                playerNameChipsBet.push(playerAndChips);
+                if (name == playerName) {
+                    var assetCard1 = `/assets/${cards[0].value}_${cards[0].suit}.svg`;
+                    var assetCard2 = `/assets/${cards[1].value}_${cards[1].suit}.svg`;
                     $('#playercard1').attr('src', assetCard1);
                     $('#playercard2').attr('src', assetCard2);
                 }
             });
+
             connection.on("GameStarted", message => {
                 $('#waitInfo').text(message);
+                updatePlayerUI(playerNameChipsBet);
             });
 
-            connection.on("PlayerTurn", player => {
-                console.log(`It's now ${player}'s turn.`);
+            connection.on("PlayerTurn", (currentPlayerName, newChips, newBet, nextPlayerName) => {
+                console.log(`It's now ${nextPlayerName}'s turn.`);
+                currentBet = newBet;
+                for (let i = 0; i < playerNameChipsBet.length; i++) {
+                    if (playerNameChipsBet[i].name == currentPlayerName) {
+                        playerNameChipsBet[i].chips = newChips;
+                        playerNameChipsBet[i].bet = newBet;
+                    }
+                }
+                console.log("axa");
+                updatePlayerUI(playerNameChipsBet);
 
-                if (player == playerName) {
+                if (nextPlayerName == playerName) {
                     $('#action input').prop('disabled', false);
                 }
-            });
-            connection.on("PlayerAction", (player, action) => {
-                console.log(`${player} ${action}.`);
             });
 
             $('input[name="options"]').on('click', function () {
                 const selectedOption = $(this).attr('id');
                 console.log(`Selected option: ${selectedOption}`);
-                const value = 0;
-
-                connection.invoke("PlayHand", playerName, selectedOption, value)
+                value = 0;
+                if (selectedOption == "Raise") {
+                    var raiseAmount = $("#raiseAmount").val();
+                    if (raiseAmount > playerChips || raiseAmount <= currentBet) {
+                        alert("failed to raise")
+                        return;
+                    } else {
+                        value = raiseAmount;
+                    }
+                }
+                connection.invoke("SendPlayerAction", playerName, selectedOption, parseInt(value, 10))
                     .catch(err => console.error("Failed to send action:", err.toString()));
 
                 $('#action input').prop('disabled', true);
                 $('#action input').prop('checked', false);
             });
         });
-        function updatePlayerListUI(playerIngame) {
-            console.log(playerIngame)
-            $("#namePlayer2").text(playerIngame[0]);
-            $("#namePlayer3").text("playerIngame[1]");
+
+        function updatePlayerUI(playerNameChipsBet) {
+            var index = 2;
+            playerNameChipsBet.forEach((player) => {
+                if (player.name == playerName) {
+                    playerChips = player.chips;
+                    playerBet = player.bet;
+                    $("#namePlayer1").text(player.name);
+                    $("#chipsPlayer1").text("$" + player.chips);
+                    $("#betPlayer1").text("$" + player.bet);
+                } else {
+                    var playerNameSelector = `#namePlayer${index}`;
+                    var playerChipsSelector = `#chipsPlayer${index}`;
+                    var playerBetSelector = `#betPlayer${index}`;
+                    $(playerNameSelector).text(player.name);
+                    $(playerChipsSelector).text("$" + player.chips);
+                    $(playerBetSelector).text("$" + player.bet);
+                    index++;
+                }
+            });
         }
     </script>
 }

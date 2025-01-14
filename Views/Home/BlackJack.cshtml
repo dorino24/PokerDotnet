@@ -1,0 +1,31 @@
+@* <div class="text-center " id="mainGame">
+    <h1 class="my-3" style="font-size: 50px;">POKER</h1>
+    <div class="border border-2 border-dark rounded-pill text-center "
+        style="background-image: url('@Url.Content("~/assets/background.jpeg")'">
+        <div class="mt-5 mb-4 ">
+            @for (int i = 0; i < 2; i++)
+            {
+                <img class="" src="~/assets/backside_card.svg" alt="" width="50">
+            }
+        </div>
+        <div class="d-flex justify-content-around p-4">
+            <button class="btn btn-light rounded-circle btn-lg fs-4 border border-2 fw-bold">HIT</button>
+            <div class="text-center align-content-center">  
+            <span class="fw-bold fs-2 text-white">$1000</span>
+
+            </div>
+            <button class="btn btn-primary rounded-circle btn-lg fs-4 border border-2 fw-bold p-3">STAND</button>
+        </div>
+        <div class=" mt-4 mb-3">
+            <div class="">
+                <img class="" src="~/assets/backside_card.svg" id="playercard1" width="50" />
+                <img class="" src="~/assets/backside_card.svg" id="playercard2" width="50" />
+            </div>
+            <div class="justify-content-center text-center d-flex mt-3">
+                <div class="p-2 bg-white rounded w-25 ">
+                    <span class="fw-bold">$2000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@

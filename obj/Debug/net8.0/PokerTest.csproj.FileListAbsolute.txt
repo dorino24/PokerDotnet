@@ -70,3 +70,39 @@ D:\IT\C#\PokerTest\obj\Debug\net8.0\refint\PokerTest.dll
 D:\IT\C#\PokerTest\obj\Debug\net8.0\PokerTest.pdb
 D:\IT\C#\PokerTest\obj\Debug\net8.0\PokerTest.genruntimeconfig.cache
 D:\IT\C#\PokerTest\obj\Debug\net8.0\ref\PokerTest.dll
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\appsettings.Development.json
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\appsettings.json
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\PokerTest.staticwebassets.runtime.json
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\PokerTest.exe
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\PokerTest.deps.json
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\PokerTest.runtimeconfig.json
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\PokerTest.dll
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\PokerTest.pdb
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Formulatrix Work\Training\PokerDotnet\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.csproj.AssemblyReference.cache
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.AssemblyInfoInputs.cache
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.AssemblyInfo.cs
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.csproj.CoreCompileInputs.cache
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.MvcApplicationPartsAssemblyInfo.cache
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.RazorAssemblyInfo.cache
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.RazorAssemblyInfo.cs
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.sourcelink.json
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\staticwebassets.build.json
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\staticwebassets.development.json
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\staticwebassets\msbuild.PokerTest.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\staticwebassets\msbuild.build.PokerTest.props
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.PokerTest.props
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.PokerTest.props
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\scopedcss\bundle\PokerTest.styles.css
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\scopedcss\projectbundle\PokerTest.bundle.scp.css
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.csproj.Up2Date
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.dll
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\refint\PokerTest.dll
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.pdb
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.genruntimeconfig.cache
+C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\ref\PokerTest.dll
+C:\Formulatrix Work\Training\PokerTest\obj\Debug\net8.0\PokerTest.sourcelink.json

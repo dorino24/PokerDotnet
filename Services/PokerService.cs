@@ -30,7 +30,6 @@ public class PokerService : IPokerService
     public Game GetGame()
     {
         return _game;
-
     }
 
 

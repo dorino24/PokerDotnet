@@ -1,548 +1,544 @@
 {
   "Files": [
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PokerTest.bundle.scp.css",
-      "PackagePath": "staticwebassets\\PokerTest.yuqegkjeb6.bundle.scp.css"
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PokerTest.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PokerTest.bundle.scp.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\10_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\10_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\10_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\10_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\10_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\10_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\10_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\10_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\10_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\10_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\10_spades.svg",
       "PackagePath": "staticwebassets\\assets\\10_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\2_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\2_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\2_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\2_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\2_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\2_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\2_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\2_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\2_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\2_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\2_spades.svg",
       "PackagePath": "staticwebassets\\assets\\2_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\3_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\3_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\3_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\3_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\3_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\3_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\3_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\3_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\3_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\3_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\3_spades.svg",
       "PackagePath": "staticwebassets\\assets\\3_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\4_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\4_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\4_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\4_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\4_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\4_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\4_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\4_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\4_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\4_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\4_spades.svg",
       "PackagePath": "staticwebassets\\assets\\4_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\5_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\5_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\5_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\5_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\5_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\5_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\5_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\5_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\5_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\5_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\5_spades.svg",
       "PackagePath": "staticwebassets\\assets\\5_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\6_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\6_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\6_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\6_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\6_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\6_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\6_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\6_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\6_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\6_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\6_spades.svg",
       "PackagePath": "staticwebassets\\assets\\6_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\7_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\7_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\7_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\7_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\7_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\7_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\7_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\7_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\7_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\7_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\7_spades.svg",
       "PackagePath": "staticwebassets\\assets\\7_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\8_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\8_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\8_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\8_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\8_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\8_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\8_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\8_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\8_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\8_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\8_spades.svg",
       "PackagePath": "staticwebassets\\assets\\8_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\9_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\9_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\9_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\9_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\9_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\9_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\9_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\9_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\9_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\9_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\9_spades.svg",
       "PackagePath": "staticwebassets\\assets\\9_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\A_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\A_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\A_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\A_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\A_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\A_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\A_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\A_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\A_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\A_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\A_spades.svg",
       "PackagePath": "staticwebassets\\assets\\A_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\J_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\J_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\J_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\J_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\J_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\J_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\J_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\J_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\J_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\J_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\J_spades.svg",
       "PackagePath": "staticwebassets\\assets\\J_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\K_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\K_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\K_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\K_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\K_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\K_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\K_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\K_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\K_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\K_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\K_spades.svg",
       "PackagePath": "staticwebassets\\assets\\K_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\Q_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\Q_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\Q_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\Q_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\Q_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\Q_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\Q_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\Q_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\Q_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\Q_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\Q_spades.svg",
       "PackagePath": "staticwebassets\\assets\\Q_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\ace_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\ace_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\ace_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\ace_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\ace_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\ace_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\ace_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\ace_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\ace_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\ace_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\ace_spades.svg",
       "PackagePath": "staticwebassets\\assets\\ace_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\background.jpeg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\background.jpeg",
       "PackagePath": "staticwebassets\\assets\\background.jpeg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\backside_card.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\backside_card.svg",
       "PackagePath": "staticwebassets\\assets\\backside_card.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\jack_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\jack_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\jack_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\jack_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\jack_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\jack_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\jack_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\jack_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\jack_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\jack_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\jack_spades.svg",
       "PackagePath": "staticwebassets\\assets\\jack_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\king_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\king_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\king_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\king_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\king_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\king_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\king_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\king_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\king_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\king_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\king_spades.svg",
       "PackagePath": "staticwebassets\\assets\\king_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\queen_clubs.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\queen_clubs.svg",
       "PackagePath": "staticwebassets\\assets\\queen_clubs.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\queen_diamonds.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\queen_diamonds.svg",
       "PackagePath": "staticwebassets\\assets\\queen_diamonds.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\queen_hearts.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\queen_hearts.svg",
       "PackagePath": "staticwebassets\\assets\\queen_hearts.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\assets\\queen_spades.svg",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\assets\\queen_spades.svg",
       "PackagePath": "staticwebassets\\assets\\queen_spades.svg"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\css\\site.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\favicon.ico",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\js\\site.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
-      "Id": "D:\\IT\\C#\\PokerTest\\wwwroot\\lib\\signalR\\signalr.min.js",
+      "Id": "C:\\Formulatrix Work\\Training\\PokerTest\\wwwroot\\lib\\signalR\\signalr.min.js",
       "PackagePath": "staticwebassets\\lib\\signalR\\signalr.min.js"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PokerTest.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PokerTest.Microsoft.AspNetCore.StaticWebAssets.props",

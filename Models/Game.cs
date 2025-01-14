@@ -3,16 +3,25 @@ namespace PokerTest.Models
     public class Game
     {
         public string GameId { get; private set; }
+        //use array
         public List<Player> Players { get; private set; }
         private Deck deck;
+        public Dealer Dealer;
+        public int Pot { get; set; }
+
+//enum
+        public string Stage { get; set; }
         public Game(string gameId)
         {
             GameId = gameId;
             Players = new List<Player>();
             deck = new Deck();
+            Dealer = new Dealer();
+            Stage = "New";
         }
         public void AddPlayerToGame(Player player)
         {
+            //validation kalo dah ada ato hashSet
             Players.Add(player);
         }
         public Player? GetPlayer(string playerName)
@@ -28,10 +37,15 @@ namespace PokerTest.Models
         }
         public void StartGame()
         {
+            //Action untuk animasi 
+            for (int i = 0; i < 5; i++)
+            {
+                Dealer.AddCard(deck.DrawCard());
+            }
             foreach (var player in Players)
             {
-                player.AddCardToHand(deck.DrawCard());
-                player.AddCardToHand(deck.DrawCard());
+                player.AddCard(deck.DrawCard());
+                player.AddCard(deck.DrawCard());
             }
         }
         public bool PlaceBet(Player player, int amount)

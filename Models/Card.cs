@@ -2,6 +2,7 @@ namespace PokerTest.Models
 {
     public class Card
     {
+        //better enum 
         public string Suit {get;private set;}
         public string Value {get;private set;}
 
