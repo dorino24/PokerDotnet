@@ -1,19 +1,21 @@
+using PokerTest.Models.Enums;
+
 namespace PokerTest.Models
 {
     public class Card
     {
         //better enum 
-        public string Suit {get;private set;}
-        public string Value {get;private set;}
+        public Suit Suit {get;private set;}
+        public Rank Rank {get;private set;}
 
-        public Card(string suit, string value)
+        public Card(Suit suit, Rank rank)
         {
             Suit = suit;
-            Value = value;
+            Rank = rank;
         }
         public override string ToString()
         {
-            return $"{Value}_{Suit}";
+            return $"{Rank}_{Suit}";
         }
     }
 }

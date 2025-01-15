@@ -15,6 +15,7 @@ public class PokerService : IPokerService
     public void AddPlayerToGame(string playerName, string connectionId)
     {
         Player player = new Player(playerName, connectionId);
+        
         _game.AddPlayerToGame(player);
     }
     public int GetTotalPlayer()
@@ -32,5 +33,7 @@ public class PokerService : IPokerService
         return _game;
     }
 
-
+    public (Player,string) DetermineWinner(){
+        return _game.DetermineWinner();
+    }
 }

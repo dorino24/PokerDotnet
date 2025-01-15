@@ -5,7 +5,7 @@ namespace PokerTest.Models
         public string Name { get; private set; }
         //array
         public List<Card> Cards { get; private set; }
-        public int Chips { get; private set; }
+        public int Chips { get;  set; }
         public int CurrentBet { get;  set; }
         public string ConnectionId { get; private set; }
         // public string Action { get; private set; }
@@ -26,8 +26,8 @@ namespace PokerTest.Models
         }
         public void PlaceBet(int amount)
         {
+            Chips -= amount - CurrentBet;
             CurrentBet = amount;
         }
-
     }
 }

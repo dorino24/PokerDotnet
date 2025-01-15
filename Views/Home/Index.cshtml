@@ -20,8 +20,11 @@
     <script text="text/javascript">
         var playerChips = 0;
         var playerBet = 0;
-        var currentBet = 0;
-        var currentStage ="";
+        var prevBet = 0;
+        var currentStage = "PreFlop";
+        var currentPot = 0;
+        var dealerCards = [];
+        var opponentName = [];
         $(document).ready(function () {
 
             var playerNameChipsBet = [];
@@ -49,43 +52,82 @@
                 $("#namePlayer1").text(playerName);
             });
 
-            connection.on("PlayerHand", (name, chips, cards, bet, dealerCard) => {
+            connection.on("InitalNewStage", (stage, pot) => {
+                console.log(stage);
+                currentStage = stage;
+                currentPot = pot;
+                playerNameChipsBet.forEach(player => {
+                    player.bet = 0;
+                });
+                $('#pot').text("POT : $" + currentPot);
+                updatePlayerUI(playerNameChipsBet);
 
-                /* $('#dealerCard1').attr('src', `/assets/${dealerCard[0].value}_${dealerCard[0].suit}.svg`);
-                 $('#dealerCard2').attr('src', `/assets/${dealerCard[1].value}_${dealerCard[1].suit}.svg`);
-                 $('#dealerCard3').attr('src', `/assets/${dealerCard[2].value}_${dealerCard[2].suit}.svg`);*/
+                if (currentStage == 1) {
+                    $('#dealerCard1').attr('src', `/assets/${dealerCards[0]}.svg`);
+                    $('#dealerCard2').attr('src', `/assets/${dealerCards[1]}.svg`);
+                    $('#dealerCard3').attr('src', `/assets/${dealerCards[2]}.svg`);
+                } else if (currentStage == 2) {
+                    $('#dealerCard4').attr('src', `/assets/${dealerCards[3]}.svg`);
+                } else if (currentStage == 3) {
+                    $('#dealerCard5').attr('src', `/assets/${dealerCards[4]}.svg`);
+                }
+            });
 
+            connection.on("InitialGame", (name, chips, cards, bet, dealerCard) => {
                 let playerAndChips = { name: name, chips: chips, bet: bet };
                 playerNameChipsBet.push(playerAndChips);
                 if (name == playerName) {
-                    var assetCard1 = `/assets/${cards[0].value}_${cards[0].suit}.svg`;
-                    var assetCard2 = `/assets/${cards[1].value}_${cards[1].suit}.svg`;
-                    $('#playercard1').attr('src', assetCard1);
-                    $('#playercard2').attr('src', assetCard2);
+                    console.log(cards);
+                    $('#playercard1').attr('src', `/assets/${cards[0]}.svg`);
+                    $('#playercard2').attr('src', `/assets/${cards[1]}.svg`);
+                    dealerCard.forEach(card => {
+                        dealerCards.push(card)
+                    });
                 }
             });
 
-            connection.on("GameStarted", message => {
+            connection.on("GameStarted", (message, listPlayer) => {
                 $('#waitInfo').text(message);
+                var opponentIndex = 2;
+                listPlayer.forEach((player) => {
+                    if (player != playerName) {
+                        var opponent = { Index: opponentIndex, name: player };
+                        opponentName.push(opponent);
+                        opponentIndex++;
+                    }
+                });
                 updatePlayerUI(playerNameChipsBet);
             });
+            connection.on("Winner", (message, highestRangking) => {
+                $('#waitInfo').text("Winner : " + message + " with "+ highestRangking);
+            })
+            connection.on("ShowAllCards", (playerName, cards) => {
+                opponentName.forEach(opponent => {
+                    if (playerName == opponent.name) {
+                        $(`#player${opponent.Index}Card1`).attr('src', `/assets/${cards[0]}.svg`);
+                        $(`#player${opponent.Index}Card2`).attr('src', `/assets/${cards[1]}.svg`);
+                    }
+                })
+            });
 
-            connection.on("PlayerTurn", (currentPlayerName, newChips, newBet, nextPlayerName,stage) => {
-                console.log(`It's now ${nextPlayerName}'s turn.`);
-                currentStage = stage;
-                console.log(currentStage);
-                currentBet = newBet;
+            connection.on("PlayerTurn", (prevPlayerNameTurn, newChips, newBet, currentPlayerNameTurn) => {
+                console.log(`It's now ${currentPlayerNameTurn}'s turn.`);
                 for (let i = 0; i < playerNameChipsBet.length; i++) {
-                    if (playerNameChipsBet[i].name == currentPlayerName) {
+                    if (playerNameChipsBet[i].name == prevPlayerNameTurn) {
                         playerNameChipsBet[i].chips = newChips;
                         playerNameChipsBet[i].bet = newBet;
+                        prevBet = newBet;
                     }
                 }
-                console.log("axa");
                 updatePlayerUI(playerNameChipsBet);
-
-                if (nextPlayerName == playerName) {
+                if (currentPlayerNameTurn == playerName) {
                     $('#action input').prop('disabled', false);
+                    if (prevBet == 0 || playerBet == prevBet) {
+                        $("#Call").prop('disabled', true);
+                    }
+                    if (prevBet != 0 && playerBet != prevBet) {
+                        $("#Check").prop('disabled', true);
+                    }
                 }
             });
 
@@ -95,7 +137,7 @@
                 value = 0;
                 if (selectedOption == "Raise") {
                     var raiseAmount = $("#raiseAmount").val();
-                    if (raiseAmount > playerChips || raiseAmount <= currentBet) {
+                    if (raiseAmount > playerChips || raiseAmount <= prevBet) {
                         alert("failed to raise")
                         return;
                     } else {
@@ -120,13 +162,13 @@
                     $("#chipsPlayer1").text("$" + player.chips);
                     $("#betPlayer1").text("$" + player.bet);
                 } else {
-                    var playerNameSelector = `#namePlayer${index}`;
-                    var playerChipsSelector = `#chipsPlayer${index}`;
-                    var playerBetSelector = `#betPlayer${index}`;
-                    $(playerNameSelector).text(player.name);
-                    $(playerChipsSelector).text("$" + player.chips);
-                    $(playerBetSelector).text("$" + player.bet);
-                    index++;
+                    opponentName.forEach((opponent) => {
+                        if (player.name == opponent.name) {
+                            $(`#namePlayer${opponent.Index}`).text(player.name);
+                            $(`#chipsPlayer${opponent.Index}`).text("$" + player.chips);
+                            $(`#betPlayer${opponent.Index}`).text("$" + player.bet);
+                        }
+                    });
                 }
             });
         }

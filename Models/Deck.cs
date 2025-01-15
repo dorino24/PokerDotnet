@@ -1,3 +1,5 @@
+using PokerTest.Models.Enums;
+
 namespace PokerTest.Models
 {
     public class Deck
@@ -12,14 +14,9 @@ namespace PokerTest.Models
         }
         private void Initialization()
         {
-            // enum
-            string[] suits = ["hearts", "diamonds", "clubs", "spades"];
-            string[] ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
-
-            // can custom initialization 
-            foreach (var suit in suits)
+            foreach (Suit suit in Enum.GetValues(typeof(Suit)))
             {
-                foreach (var rank in ranks)
+                foreach (Rank rank in Enum.GetValues(typeof(Rank)))
                 {
                     cards.Add(new Card(suit, rank));
                 }

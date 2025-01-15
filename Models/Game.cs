@@ -1,3 +1,5 @@
+using PokerTest.Models.Enums;
+
 namespace PokerTest.Models
 {
     public class Game
@@ -8,16 +10,14 @@ namespace PokerTest.Models
         private Deck deck;
         public Dealer Dealer;
         public int Pot { get; set; }
-
-//enum
-        public string Stage { get; set; }
+        public Stage Stage { get; set; }
         public Game(string gameId)
         {
             GameId = gameId;
             Players = new List<Player>();
             deck = new Deck();
             Dealer = new Dealer();
-            Stage = "PreFlop";
+            Stage = Stage.PREFLOP;
         }
         public void AddPlayerToGame(Player player)
         {
@@ -62,9 +62,56 @@ namespace PokerTest.Models
             return player;
         }
 
-        // public Player DetermineWinner(){
-        //     return ;
-        // }
+        public (Player, string) DetermineWinner()
+        {
+            var highestRanking = 0;
+            var highestMaxValue = 0;
+            var highestKickers = Array.Empty<int>();
+            Player? winner = null;
 
+            foreach (var player in Players)
+            {
+                foreach (var dealerCard in Dealer.DealerCards)
+                {
+                    player.AddCard(dealerCard);
+                }
+
+                var pokerRanking = PokerEvaluator.EvaluateHand(player);
+                System.Console.WriteLine((Ranking)pokerRanking.Ranking);
+                if (pokerRanking.Ranking > highestRanking)
+                {
+                    highestRanking = pokerRanking.Ranking;
+                    highestMaxValue = pokerRanking.MaxValue;
+                    highestKickers = pokerRanking.Kickers;
+                    winner = player;
+                }
+                else if (pokerRanking.Ranking == highestRanking)
+                {
+                    if (pokerRanking.MaxValue > highestMaxValue)
+                    {
+                        highestMaxValue = pokerRanking.MaxValue;
+                        highestKickers = pokerRanking.Kickers;
+                        winner = player;
+                    }
+                    else if (pokerRanking.MaxValue == highestMaxValue)
+                    {
+                        for (int i = 0; i < pokerRanking.Kickers.Length; i++)
+                        {
+                            if (i >= highestKickers.Length || pokerRanking.Kickers[i] > highestKickers[i])
+                            {
+                                highestKickers = pokerRanking.Kickers;
+                                winner = player;
+                                break;
+                            }
+                            else if (pokerRanking.Kickers[i] < highestKickers[i])
+                            {
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            return (winner!, ((Ranking)highestRanking).ToString());
+        }
     }
 }

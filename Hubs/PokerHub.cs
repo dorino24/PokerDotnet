@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.SignalR;
 using PokerTest;
 using PokerTest.Models;
+using PokerTest.Models.Enums;
 
 namespace SignalRChatApp.Hubs
 {
@@ -8,8 +9,6 @@ namespace SignalRChatApp.Hubs
     {
         private readonly IPokerService _pokerService;
         private const string gameId = "TheOnlyOne";
-        private readonly Dictionary<string, TaskCompletionSource<(string Action, int Value)>> _playerActions = new();
-        private readonly Dictionary<string, CancellationTokenSource> _playerCancellationTokens = new();
         public PokerHub(IPokerService pokerService)
         {
             _pokerService = pokerService;
@@ -45,10 +44,16 @@ namespace SignalRChatApp.Hubs
             game.Pot = 15;
             await Clients.Group(gameId).SendAsync("BlindsPosted", smallBlindPlayer.Name, bigBlindPlayer.Name, 0, 15);
 
+            var listPlayer = new List<string>();
             foreach (var player in game.Players)
-                await Clients.Group(gameId).SendAsync("DealCards", game.Dealer.DealerCards);
+            {
+                listPlayer.Add(player.Name);
+                var playerCardsAsString = player.Cards.Select(card => card.ToString()).ToArray();
+                var dealerCardsAsString = game.Dealer.DealerCards.Select(card => card.ToString()).ToArray();
+                await Clients.Group(gameId).SendAsync("InitialGame", player.Name, player.Chips, playerCardsAsString, player.CurrentBet, dealerCardsAsString);
+            }
 
-            await Clients.Group(gameId).SendAsync("GameStarted", "Game Started");
+            await Clients.Group(gameId).SendAsync("GameStarted", "Game Started", listPlayer);
 
             var currentPlayerIndex = 1 % players.Count();
             var currentPlayer = players[currentPlayerIndex];
@@ -56,67 +61,9 @@ namespace SignalRChatApp.Hubs
                             currentPlayer.Name,
                             currentPlayer.Chips,
                             currentPlayer.CurrentBet,
-                            players[(currentPlayerIndex + 1) % players.Count()].Name,
-                            game.Stage);
-
+                            players[(currentPlayerIndex + 1) % players.Count()].Name);
         }
 
-        public async Task PreFlop(string playerName)
-        {
-            int playerIndex = _pokerService.GetGame().Players.FindIndex(player => player.Name == playerName);
-            var currentPlayer = _pokerService.GetGame().Players[playerIndex];
-            bool allEqual = _pokerService.GetGame().Players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
-            _pokerService.GetGame().Players.All(x =>  x.CurrentBet == currentPlayer.CurrentBet);
-            
-            if (playerIndex == _pokerService.GetTotalPlayer() - 1 && allEqual)
-            {
-                _pokerService.GetGame().Stage = "Flop";
-                await Clients.Group(gameId).SendAsync("Stage", _pokerService.GetGame().Stage);
-            }
-        }
-
-        public async Task Flop(string playerName)
-        {
-            int playerIndex = _pokerService.GetGame().Players.FindIndex(player => player.Name == playerName);
-            var currentPlayer = _pokerService.GetGame().Players[playerIndex];
-            bool allEqual = _pokerService.GetGame().Players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
-
-            if (playerIndex == _pokerService.GetTotalPlayer() - 1 && allEqual)
-            {
-                _pokerService.GetGame().Stage = "FourthStreet";
-                await Clients.Group(gameId).SendAsync("Stage", _pokerService.GetGame().Stage);
-            }
-        }
-
-        public async Task FourthStreet(string playerName)
-        {
-            int playerIndex = _pokerService.GetGame().Players.FindIndex(player => player.Name == playerName);
-            var currentPlayer = _pokerService.GetGame().Players[playerIndex];
-            bool allEqual = _pokerService.GetGame().Players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
-
-            if (playerIndex == _pokerService.GetTotalPlayer() - 1 && allEqual)
-            {
-                _pokerService.GetGame().Stage = "FiveStreet";
-                await Clients.Group(gameId).SendAsync("Stage", _pokerService.GetGame().Stage);
-            }
-        }
-        public async Task FiveStreet(string playerName)
-        {
-            int playerIndex = _pokerService.GetGame().Players.FindIndex(player => player.Name == playerName);
-            var currentPlayer = _pokerService.GetGame().Players[playerIndex];
-            bool allEqual = _pokerService.GetGame().Players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
-
-            if (playerIndex == _pokerService.GetTotalPlayer() - 1 && allEqual)
-            {
-                _pokerService.GetGame().Stage = "Showdown";
-                await Clients.Group(gameId).SendAsync("Stage", _pokerService.GetGame().Stage);
-            }
-        }
-        public async Task Showdown(string playerName)
-        {
-            // how down
-            await Clients.Group(gameId).SendAsync("Winner", "player1");
-        }
 
         public async Task PlayerTurn(string playerName, string action, int value = 0)
         {
@@ -138,7 +85,7 @@ namespace SignalRChatApp.Hubs
                     int callAmount = players[prevIndex].CurrentBet - currentPlayer.CurrentBet;
                     if (callAmount > 0)
                     {
-                        currentPlayer.PlaceBet(callAmount);
+                        currentPlayer.PlaceBet(players[prevIndex].CurrentBet);
                         game.Pot += callAmount;
                         Console.WriteLine($"{playerName} calls {callAmount}.");
                     }
@@ -169,23 +116,21 @@ namespace SignalRChatApp.Hubs
             }
 
             await Clients.Group(gameId).SendAsync("PlayerAction", playerName, action, value);
-
             switch (game.Stage)
             {
-                case "preflop":
+                case Stage.PREFLOP:
                     await PreFlop(playerName);
                     break;
-                case "flop":
+                case Stage.FLOP:
                     await Flop(playerName);
                     break;
-                case "FourthStreet":
-                    await FourthStreet(playerName);
+                case Stage.TURN:
+                    await Turn(playerName);
                     break;
-                case "FiveStreet":
-                    await FiveStreet(playerName);
+                case Stage.RIVER:
+                    await River(playerName);
                     break;
                 default:
-                    await Showdown(playerName);
                     break;
             }
 
@@ -193,8 +138,7 @@ namespace SignalRChatApp.Hubs
                 playerName,
                 currentPlayer.Chips,
                 currentPlayer.CurrentBet,
-                players[nextIndex].Name,
-                game.Stage);
+                players[nextIndex].Name);
         }
 
         public override async Task OnDisconnectedAsync(Exception? exception)
@@ -203,5 +147,85 @@ namespace SignalRChatApp.Hubs
             await Clients.Group(gameId).SendAsync("PlayerLeft", player?.Name);
             await base.OnDisconnectedAsync(exception);
         }
+        public async Task PreFlop(string playerName)
+        {
+            var game = _pokerService.GetGame();
+            var players = game.Players;
+            int playerIndex = players.FindIndex(player => player.Name == playerName);
+            var currentPlayer = players[playerIndex];
+            bool allEqual = players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
+
+            if (allEqual && currentPlayer == players[1])
+            {
+                _pokerService.GetGame().Stage = Stage.FLOP;
+                foreach (var player in players)
+                {
+                    player.CurrentBet = 0;
+                }
+                await Clients.Group(gameId).SendAsync("InitalNewStage", game.Stage, game.Pot);
+            }
+        }
+
+        public async Task Flop(string playerName)
+        {
+            var game = _pokerService.GetGame();
+            var players = game.Players;
+            int playerIndex = players.FindIndex(player => player.Name == playerName);
+            var currentPlayer = players[playerIndex];
+            bool allEqual = players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
+            if (currentPlayer == players[1] && allEqual)
+            {
+                game.Stage = Stage.TURN;
+                foreach (var player in players)
+                {
+                    player.CurrentBet = 0;
+                }
+                await Clients.Group(gameId).SendAsync("InitalNewStage", game.Stage, game.Pot);
+            }
+        }
+
+
+        public async Task Turn(string playerName)
+        {
+            var game = _pokerService.GetGame();
+            var players = game.Players;
+            int playerIndex = players.FindIndex(player => player.Name == playerName);
+            var currentPlayer = players[playerIndex];
+            bool allEqual = players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
+            if (currentPlayer == players[1] && allEqual)
+            {
+                game.Stage = Stage.RIVER;
+                foreach (var player in players)
+                {
+                    player.CurrentBet = 0;
+                }
+                await Clients.Group(gameId).SendAsync("InitalNewStage", game.Stage, game.Pot);
+            }
+        }
+        public async Task River(string playerName)
+        {
+            var game = _pokerService.GetGame();
+            var players = game.Players;
+            int playerIndex = players.FindIndex(player => player.Name == playerName);
+            var currentPlayer = players[playerIndex];
+            bool allEqual = players.All(x => x.CurrentBet == currentPlayer.CurrentBet);
+
+            if (currentPlayer == players[1] && allEqual)
+            {
+                _pokerService.GetGame().Stage = Stage.SHOWDOWN;
+                foreach (var player in players)
+                {
+                    player.CurrentBet = 0;
+                    var playerCardsAsString = player.Cards.Select(card => card.ToString()).ToArray();
+                    await Clients.Group(gameId).SendAsync("ShowAllCards", player.Name, playerCardsAsString);
+                }
+                await Clients.Group(gameId).SendAsync("InitalNewStage", game.Stage, game.Pot);
+                // winnner winner chicken dinner
+
+                (Player winnerPlayer, string highestRanking) = game.DetermineWinner();
+                await Clients.Group(gameId).SendAsync("Winner", winnerPlayer.Name, highestRanking);
+            }
+        }
     }
+
 }
