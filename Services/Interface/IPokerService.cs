@@ -1,13 +1,16 @@
 using PokerTest.Models;
 
-namespace PokerTest
+namespace PokerTest.Services.Interface
 {
     public interface IPokerService
     {
-        public void StartGame();
-        public Game GetGame();
-        public void AddPlayerToGame(string playerName, string connectionId);
-        public int GetTotalPlayer();
-        public Player? RemovePlayerFromGame(string connectionId);
+        public void CreateGame(int smallBlindBet, int bigBlindBet, string gameId);
+        public void StartGame( string gameId);
+        public Game? GetGame(string gameId);
+        public void AddPlayerToGame(string playerName, string connectionId, string gameId);
+        public int GetTotalPlayer(string gameId);
+        public Player? RemovePlayerFromGame(string connectionId, string gameId);
+        public bool CheckForNextStage(string playerName, string gameId);
+        public void PlayerAction(string playerName, string action, int value, string gameId);
     }
 }

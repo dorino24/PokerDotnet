@@ -1,4 +1,6 @@
 using PokerTest;
+using PokerTest.Services;
+using PokerTest.Services.Interface;
 using SignalRChatApp.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);

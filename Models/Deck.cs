@@ -4,7 +4,7 @@ namespace PokerTest.Models
 {
     public class Deck
     {
-        private List<Card> cards;
+        public List<Card> cards;
         public Deck()
         {
             //ctor ada param untuk bisa custom ienumerable 

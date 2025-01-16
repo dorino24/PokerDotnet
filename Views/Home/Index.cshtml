@@ -25,6 +25,10 @@
         var currentPot = 0;
         var dealerCards = [];
         var opponentName = [];
+        const timeLimit = 15000;
+        let timer;
+
+
         $(document).ready(function () {
 
             var playerNameChipsBet = [];
@@ -98,9 +102,37 @@
                 });
                 updatePlayerUI(playerNameChipsBet);
             });
-            connection.on("Winner", (message, highestRangking) => {
-                $('#waitInfo').text("Winner : " + message + " with "+ highestRangking);
+            connection.on("Winner", (winnerName, highestRangking, winnerChips) => {
+                playerNameChipsBet.forEach((player) => {
+                    if (player.name == winnerName) {
+                        player.chips = winnerChips;
+                    };
+                });
+                updatePlayerUI(playerNameChipsBet);
+                $('#waitInfo').text("Winner : " + winnerName + " with " + highestRangking);
+                currentPot = 0;
+                $('#pot').text("POT : $" + currentPot);
+                $('#btn-nextRound').removeClass('d-none');
+                playerNameChipsBet= [];
+                dealerCards=[];
             })
+
+            $('#btn-nextRound').on('click', function () {
+                connection.invoke("NextRound")
+                    .catch(err => console.error("Failed to send action:", err.toString()));
+                $('#btn-nextRound').addClass('d-none');
+                $('#waitInfo').text("Waiting Opponent");
+                for (var i = 1; i <= 5; i++) {
+                    if (i == 2 || i == 3) {
+                        $(`#player${i}Card1`).attr('src', `/assets/backside_card.svg`);
+                        $(`#player${i}Card2`).attr('src', `/assets/backside_card.svg`);
+                    }
+                    $(`#dealerCard${i}`).attr('src', `/assets/backside_card.svg`);
+                };
+                $('#playercard1').attr('src', `/assets/backside_card.svg`);
+                $('#playercard2').attr('src', `/assets/backside_card.svg`);
+            })
+
             connection.on("ShowAllCards", (playerName, cards) => {
                 opponentName.forEach(opponent => {
                     if (playerName == opponent.name) {
@@ -119,6 +151,7 @@
                         prevBet = newBet;
                     }
                 }
+                console.log("name:" + prevPlayerNameTurn);
                 updatePlayerUI(playerNameChipsBet);
                 if (currentPlayerNameTurn == playerName) {
                     $('#action input').prop('disabled', false);
@@ -128,13 +161,27 @@
                     if (prevBet != 0 && playerBet != prevBet) {
                         $("#Check").prop('disabled', true);
                     }
+                    timer = setTimeout(() => defaultAction(playerName), timeLimit);
                 }
             });
+
+            function defaultAction(playerName) {
+                console.log(`Time's up! ${playerName} did not act in time.`);
+                connection.invoke("PlayerTurn", playerName, "Fold", 0)
+                    .catch(err => console.error("Failed to send action:", err.toString()));
+
+                $('#playercard1').attr('src', `/assets/backside_card.svg`);
+                $('#playercard2').attr('src', `/assets/backside_card.svg`);
+                $('#action input').prop('disabled', true);
+                $('#action input').prop('checked', false);
+            }
 
             $('input[name="options"]').on('click', function () {
                 const selectedOption = $(this).attr('id');
                 console.log(`Selected option: ${selectedOption}`);
                 value = 0;
+
+                clearTimeout(timer);
                 if (selectedOption == "Raise") {
                     var raiseAmount = $("#raiseAmount").val();
                     if (raiseAmount > playerChips || raiseAmount <= prevBet) {
@@ -144,6 +191,11 @@
                         value = raiseAmount;
                     }
                 }
+                if (selectedOption == "Fold") {
+                    $('#playercard1').attr('src', `/assets/backside_card.svg`);
+                    $('#playercard2').attr('src', `/assets/backside_card.svg`);
+                }
+
                 connection.invoke("PlayerTurn", playerName, selectedOption, parseInt(value, 10))
                     .catch(err => console.error("Failed to send action:", err.toString()));
 

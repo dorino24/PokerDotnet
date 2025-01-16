@@ -4,7 +4,6 @@ namespace PokerTest.Models
 {
     public class Card
     {
-        //better enum 
         public Suit Suit {get;private set;}
         public Rank Rank {get;private set;}
 

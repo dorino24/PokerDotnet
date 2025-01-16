@@ -7,6 +7,12 @@ namespace PokerTest.Models
         public static (int MaxValue, int[] Kickers, int Ranking) EvaluateHand(Player hand)
         {
             var cards = hand.Cards.Select(c => (int)c.Rank).OrderBy(v => v).ToArray();
+            foreach (var item in cards)
+            {
+                System.Console.Write(item);
+                System.Console.Write(",");
+            }
+            System.Console.WriteLine();
             if (IsRoyalFlush(hand)) return ( 14, [], (int)Ranking.ROYAL_FLUSH);
             if (IsStraightFlush(hand).check) return ( IsStraightFlush(hand).max, [], (int)Ranking.STRAIGHT_FLUSH);
             if (IsFourOfAKind(hand).check) return ( IsFourOfAKind(hand).max, GetKickers(cards, IsFourOfAKind(hand).max), (int)Ranking.FOUR_OF_A_KIND);
@@ -45,12 +51,10 @@ namespace PokerTest.Models
 
         private static (bool check, int maxThree) IsFullHouse(Player hand)
         {
-            // Group cards by rank and calculate their counts
             var groups = hand.Cards.GroupBy(c => c.Rank)
                             .Select(g => new { Rank = g.Key, Count = g.Count() })
                             .ToList();
 
-            // Find the highest group of three and two
             int maxThree = groups.Where(g => g.Count == 3)
                                  .Select(g => (int)g.Rank)
                                  .DefaultIfEmpty(0)
@@ -63,7 +67,6 @@ namespace PokerTest.Models
 
             bool isFullHouse = maxThree > 0 && maxTwo > 0;
 
-            // Check if the hand is a full house
             return (isFullHouse, maxThree);
         }
 
