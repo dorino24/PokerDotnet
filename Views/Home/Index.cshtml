@@ -42,8 +42,6 @@
                     alert('please fill your name');
                     return;
                 }
-                $('#loby').addClass('d-none');
-                $('#mainGame').removeClass('d-none');
 
                 connection.start()
                     .then(() => {
@@ -53,9 +51,22 @@
                         }
                     })
                     .catch(err => console.error("Failed to connect to the Hub:", err.toString()));
-                $("#namePlayer1").text(playerName);
             });
 
+
+            connection.on("PlayerJoined", (message, check) => {
+                if (check) {
+                    $('#loby').addClass('d-none');
+                    $('#mainGame').removeClass('d-none');
+                    $("#namePlayer1").text(playerName);
+                } else {
+                    alert(message);
+                    connection.stop()
+                        .then(() => console.log("Connection stopped."))
+                        .catch(err => console.error("Error stopping connection:", err));
+                }
+                console.log(message);
+            });
             connection.on("InitalNewStage", (stage, pot) => {
                 console.log(stage);
                 currentStage = stage;
@@ -113,8 +124,8 @@
                 currentPot = 0;
                 $('#pot').text("POT : $" + currentPot);
                 $('#btn-nextRound').removeClass('d-none');
-                playerNameChipsBet= [];
-                dealerCards=[];
+                playerNameChipsBet = [];
+                dealerCards = [];
             })
 
             $('#btn-nextRound').on('click', function () {

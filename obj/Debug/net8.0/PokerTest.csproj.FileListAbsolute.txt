@@ -105,4 +105,3 @@ C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\refint\PokerTest.dll
 C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.pdb
 C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\PokerTest.genruntimeconfig.cache
 C:\Formulatrix Work\Training\PokerDotnet\obj\Debug\net8.0\ref\PokerTest.dll
-C:\Formulatrix Work\Training\PokerTest\obj\Debug\net8.0\PokerTest.sourcelink.json

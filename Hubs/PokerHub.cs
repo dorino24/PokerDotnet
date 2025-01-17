@@ -26,14 +26,15 @@ namespace SignalRChatApp.Hubs
 
         public async Task JoinGame(string playerName)
         {
-            _pokerService.CreateGame(_smallBlindBet,_bigBlindBet,gameId);
-            _pokerService.AddPlayerToGame(playerName, Context.ConnectionId, gameId);
+            _pokerService.CreateGame(_smallBlindBet, _bigBlindBet, gameId);
+            bool isAdded = _pokerService.AddPlayerToGame(playerName, Context.ConnectionId, gameId);
+            await Clients.Client(Context.ConnectionId).SendAsync("PlayerJoined",  isAdded ? "PlayerName Joined": "PlayerName already exist", isAdded);
             if (_pokerService.GetTotalPlayer(gameId) == 3) await StartGame();
         }
 
         public async Task StartGame()
         {
-            _pokerService.StartGame( gameId);
+            _pokerService.StartGame(gameId);
             Game? game = _pokerService.GetGame(gameId);
             List<Player> players = game!.Players;
             Player currentPlayer = players[1 % players.Count()];
@@ -65,7 +66,7 @@ namespace SignalRChatApp.Hubs
             while (players[prevIndex].IsFold)
                 prevIndex = (prevIndex == 0) ? players.Count() - 1 : prevIndex - 1;
 
-            _pokerService.PlayerAction(playerName, action, value,gameId);
+            _pokerService.PlayerAction(playerName, action, value, gameId);
 
             await Clients.Group(gameId).SendAsync("PlayerAction", playerName, action, value);
 
@@ -94,15 +95,15 @@ namespace SignalRChatApp.Hubs
             Game game = _pokerService.GetGame(gameId)!;
             List<Player> players = game.Players;
 
-            if (_pokerService.CheckForNextStage(playerName,gameId)) await Clients.Group(gameId).SendAsync("InitalNewStage", game.Stage, game.Pot);
+            if (_pokerService.CheckForNextStage(playerName, gameId)) await Clients.Group(gameId).SendAsync("InitalNewStage", game.Stage, game.Pot);
 
             if (game.Stage == Stage.SHOWDOWN)
             {
                 foreach (var player in players)
                     await Clients.Group(gameId).SendAsync("ShowAllCards", player.Name, player.Cards.Select(card => card.ToString()).ToArray());
 
-                var (winnerPlayer, highestRanking) = game.DetermineWinner();
-                await Clients.Group(gameId).SendAsync("Winner", winnerPlayer.Name, highestRanking, winnerPlayer.Chips);
+                var winnerDTO = game.DetermineWinner();
+                await Clients.Group(gameId).SendAsync("Winner", winnerDTO.PlayerWinner.Name, winnerDTO.CardRanking, winnerDTO.PlayerWinner.Chips);
             }
         }
 
@@ -118,7 +119,7 @@ namespace SignalRChatApp.Hubs
         }
         public override async Task OnDisconnectedAsync(Exception? exception)
         {
-            Player? player = _pokerService.RemovePlayerFromGame(Context.ConnectionId,gameId);
+            Player? player = _pokerService.RemovePlayerFromGame(Context.ConnectionId, gameId);
             await Clients.Group(gameId).SendAsync("PlayerLeft", player?.Name);
             await base.OnDisconnectedAsync(exception);
         }

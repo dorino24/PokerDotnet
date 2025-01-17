@@ -4,12 +4,10 @@ namespace PokerTest.Models
 {
     public class Deck
     {
-        public List<Card> cards;
+        public List<Card> Cards;
         public Deck()
         {
-            //ctor ada param untuk bisa custom ienumerable 
-
-            cards = new List<Card>();
+            Cards = new List<Card>();
             Initialization();
         }
         private void Initialization()
@@ -18,7 +16,7 @@ namespace PokerTest.Models
             {
                 foreach (Rank rank in Enum.GetValues(typeof(Rank)))
                 {
-                    cards.Add(new Card(suit, rank));
+                    Cards.Add(new Card(suit, rank));
                 }
             }
             ShuffleDeck();
@@ -26,18 +24,18 @@ namespace PokerTest.Models
         public void ShuffleDeck()
         {
             var random = new Random();
-            for (int i = cards.Count - 1; i > 0; i--)
+            for (int i = Cards.Count - 1; i > 0; i--)
             {
                 int j = random.Next(i + 1);
-                var temp = cards[i];
-                cards[i] = cards[j];
-                cards[j] = temp;
+                var temp = Cards[i];
+                Cards[i] = Cards[j];
+                Cards[j] = temp;
             }
         }
         public Card DrawCard()
         {
-            Card card = cards.First();
-            cards.RemoveAt(0);
+            Card card = Cards.First();
+            Cards.RemoveAt(0);
             return card;
         }
 

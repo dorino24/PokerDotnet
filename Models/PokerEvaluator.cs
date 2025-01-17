@@ -1,46 +1,41 @@
+using PokerTest.Models.DTOs;
 using PokerTest.Models.Enums;
 
 namespace PokerTest.Models
 {
     public class PokerEvaluator
     {
-        public static (int MaxValue, int[] Kickers, int Ranking) EvaluateHand(Player hand)
+        public static CheckRanking EvaluateHand(Player hand)
         {
-            var cards = hand.Cards.Select(c => (int)c.Rank).OrderBy(v => v).ToArray();
-            foreach (var item in cards)
-            {
-                System.Console.Write(item);
-                System.Console.Write(",");
-            }
-            System.Console.WriteLine();
-            if (IsRoyalFlush(hand)) return ( 14, [], (int)Ranking.ROYAL_FLUSH);
-            if (IsStraightFlush(hand).check) return ( IsStraightFlush(hand).max, [], (int)Ranking.STRAIGHT_FLUSH);
-            if (IsFourOfAKind(hand).check) return ( IsFourOfAKind(hand).max, GetKickers(cards, IsFourOfAKind(hand).max), (int)Ranking.FOUR_OF_A_KIND);
-            if (IsFullHouse(hand).check) return ( IsFullHouse(hand).maxThree, [], (int)Ranking.FULL_HOUSE);
-            if (IsFlush(hand).check) return ( IsFlush(hand).max, GetKickers(cards, IsFlush(hand).max), (int)Ranking.FLUSH);
-            if (IsStraight(hand).check) return ( IsStraight(hand).max, [], (int)Ranking.STRAIGHT);
-            if (IsThreeOfAKind(hand).check) return ( IsThreeOfAKind(hand).max, GetKickers(cards, IsThreeOfAKind(hand).max), (int)Ranking.THREE_OF_A_KIND);
-            if (IsTwoPair(hand).check) return ( IsTwoPair(hand).max, GetKickers(cards, IsTwoPair(hand).max), (int)Ranking.TWO_PAIR);
-            if (IsPair(hand).check) return ( IsPair(hand).max, GetKickers(cards, IsPair(hand).max), (int)Ranking.PAIR);
-            return ((int)cards[0], cards.Skip(1).ToArray(), (int)Ranking.HIGH_CARD);
+            int[] cards = hand.Cards.Select(c => (int)c.Rank).OrderBy(v => v).ToArray();
+            if (IsRoyalFlush(hand)) return new CheckRanking { MaxValue = 14, Kickers = [], Ranking = (int)Ranking.ROYAL_FLUSH };
+            if (IsStraightFlush(hand).check) return new CheckRanking { MaxValue = IsStraightFlush(hand).max, Kickers = [], Ranking = (int)Ranking.STRAIGHT_FLUSH };
+            if (IsFourOfAKind(hand).check) return new CheckRanking { MaxValue = IsFourOfAKind(hand).max, Kickers = GetKickers(cards, IsFourOfAKind(hand).max), Ranking = (int)Ranking.FOUR_OF_A_KIND };
+            if (IsFullHouse(hand).check) return new CheckRanking { MaxValue = IsFullHouse(hand).maxThree, Kickers = GetKickers(cards, IsFullHouse(hand).maxThree), Ranking = (int)Ranking.FULL_HOUSE };
+            if (IsFlush(hand).check) return new CheckRanking { MaxValue = IsFlush(hand).max, Kickers = GetKickers(cards, IsFlush(hand).max), Ranking = (int)Ranking.FLUSH };
+            if (IsStraight(hand).check) return new CheckRanking { MaxValue = IsStraight(hand).max, Kickers = [], Ranking = (int)Ranking.STRAIGHT };
+            if (IsThreeOfAKind(hand).check) return new CheckRanking { MaxValue = IsThreeOfAKind(hand).max, Kickers = GetKickers(cards, IsThreeOfAKind(hand).max), Ranking = (int)Ranking.THREE_OF_A_KIND };
+            if (IsTwoPair(hand).check) return new CheckRanking { MaxValue = IsTwoPair(hand).max, Kickers = GetKickers(cards, IsTwoPair(hand).max), Ranking = (int)Ranking.TWO_PAIR };
+            if (IsPair(hand).check) return new CheckRanking { MaxValue = IsPair(hand).max, Kickers = GetKickers(cards, IsPair(hand).max), Ranking = (int)Ranking.PAIR };
+            return new CheckRanking { MaxValue = (int)cards[0], Kickers = cards.Skip(1).ToArray(), Ranking = (int)Ranking.HIGH_CARD };
         }
         private static int[] GetKickers(int[] allCards, int mainHandValue)
         {
-            var kickers = allCards.Where(v => v != mainHandValue).OrderByDescending(v => v).ToArray();
+            int[] kickers = allCards.Where(v => v != mainHandValue).OrderByDescending(v => v).ToArray();
             return kickers;
         }
 
         private static bool IsRoyalFlush(Player hand)
         {
-            var straightFlush = IsStraightFlush(hand);
+            (bool check, int max) straightFlush = IsStraightFlush(hand);
             return straightFlush.check && hand.Cards[0].Rank == Enums.Rank.Ace;
         }
 
         private static (bool check, int max) IsStraightFlush(Player hand)
         {
-            var straight = IsStraight(hand);
-            var flush = IsFlush(hand);
-            var max = Math.Max(straight.max, flush.max);
+            (bool check, int max) straight = IsStraight(hand);
+            (bool check, int max) flush = IsFlush(hand);
+            int max = Math.Max(straight.max, flush.max);
             return (straight.check && straight.check, max);
         }
 
@@ -73,10 +68,8 @@ namespace PokerTest.Models
 
         private static (bool check, int max) IsFlush(Player hand)
         {
-            // Check if all cards are of the same suit
             bool isFlush = hand.Cards.Select(c => c.Suit).Distinct().Count() == 1;
 
-            // Find the maximum card value in the hand
             int maxCardValue = isFlush ? hand.Cards.Max(c => (int)c.Rank) : 0;
 
             return (isFlush, maxCardValue);
@@ -84,9 +77,9 @@ namespace PokerTest.Models
 
         private static (bool check, int max) IsStraight(Player hand)
         {
-            var ranks = hand.Cards.Select(c => (int)c.Rank).OrderBy(r => r).ToList();
-            
-            var uniqueRanks = ranks.Distinct().ToList();
+            List<int> ranks = hand.Cards.Select(c => (int)c.Rank).OrderBy(r => r).ToList();
+
+            List<int> uniqueRanks = ranks.Distinct().ToList();
 
             if (uniqueRanks.Count < 5) return (false, 0);
 
