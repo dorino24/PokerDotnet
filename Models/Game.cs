@@ -1,3 +1,4 @@
+using PokerTest.Models.DTOs;
 using PokerTest.Models.Enums;
 
 namespace PokerTest.Models
@@ -6,46 +7,49 @@ namespace PokerTest.Models
     {
         public string GameId { get; private set; }
         public List<Player> Players { get; private set; }
-        private Deck deck;
-        public Dealer Dealer;
         public int Pot { get; set; }
         public Stage Stage { get; set; }
-        private int _bigBlindBet ;
-        private int _smallBlindBet ;
+        public Dealer Dealer { get; private set; }
+        private Deck _deck;
+        private readonly int _bigBlindBet;
+        private readonly int _smallBlindBet;
 
-        //bigblind smallblind dack dealer pake interface di constructor 
-        public Game(string gameId,int smallBlindbet, int bigBlindBet)
+        public Game(string gameId, int smallBlindbet, int bigBlindBet)
         {
             GameId = gameId;
             Players = new List<Player>();
-            deck = new Deck();
+            _deck = new Deck();
             Dealer = new Dealer();
-            _bigBlindBet= bigBlindBet;
+            _bigBlindBet = bigBlindBet;
             _smallBlindBet = smallBlindbet;
 
         }
-        public void AddPlayerToGame(Player player)
+        public bool AddPlayerToGame(Player player)
         {
-            //validation kalo dah ada ato hashSet
-            Players.Add(player);
+            if (!Players.Any(p => p.Name == player.Name))
+            {
+                Players.Add(player);
+                return true;
+            }
+            return false;
+
         }
         public Player? GetPlayer(string playerName)
         {
             foreach (var player in Players)
                 if (player.Name == playerName) return player;
-            
+
             return null;
         }
         public void StartGame()
         {
-            //Action untuk animasi 
             for (int i = 0; i < 5; i++)
-                Dealer.AddCard(deck.DrawCard());
-            
+                Dealer.AddCard(_deck.DrawCard());
+
             foreach (var player in Players)
             {
-                player.AddCard(deck.DrawCard());
-                player.AddCard(deck.DrawCard());
+                player.AddCard(_deck.DrawCard());
+                player.AddCard(_deck.DrawCard());
             }
 
             Players[0].PlaceBet(_smallBlindBet);
@@ -68,9 +72,9 @@ namespace PokerTest.Models
         public void NextRound()
         {
             Pot = 0;
-            if (deck.cards.Count < (5 + 2 * Players.Count))
+            if (_deck.Cards.Count < (5 + 2 * Players.Count))
             {
-                deck = new Deck();
+                _deck = new Deck();
             }
             Dealer.DealerCards.Clear();
             foreach (var player in Players)
@@ -79,8 +83,7 @@ namespace PokerTest.Models
             }
         }
 
-        //buat class untuk return
-        public (Player, string) DetermineWinner()
+        public WinnerDTO DetermineWinner()
         {
             int highestRanking = 0;
             int highestMaxValue = 0;
@@ -97,7 +100,6 @@ namespace PokerTest.Models
                     }
 
                     var pokerRanking = PokerEvaluator.EvaluateHand(player);
-                    System.Console.WriteLine((Ranking)pokerRanking.Ranking);
                     if (pokerRanking.Ranking > highestRanking)
                     {
                         highestRanking = pokerRanking.Ranking;
@@ -133,7 +135,8 @@ namespace PokerTest.Models
                 }
             }
             winner!.Chips += Pot;
-            return (winner!, ((Ranking)highestRanking).ToString());
+
+            return new WinnerDTO { PlayerWinner = winner, CardRanking = ((Ranking)highestRanking).ToString() };
         }
     }
 }

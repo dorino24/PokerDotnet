@@ -19,8 +19,6 @@ namespace PokerTest.Models
             CurrentBet = 0;
             IsFold = false;
         }
-
-        // scope game 
         public void AddCard(Card card)
         {
             Cards.Add(card);
