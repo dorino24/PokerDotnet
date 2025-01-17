@@ -18,10 +18,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Formulatrix Work\Training\PokerTest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Formulatrix Work/Training/PokerTest/Views/Home/BlackJack.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCbGFja0phY2suY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Formulatrix Work/Training/PokerTest/Views/Home/Game.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYW1lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
